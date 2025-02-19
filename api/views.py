@@ -14,21 +14,3 @@ class ProgrammerViewSet(viewsets.ModelViewSet):
 class QuestionViewSet(viewsets.ModelViewSet):
     queryset=Question.objects.all()
     serializer_class=QuestionSerializer
-
-    
-def ask_openai(message):
-    chat = client.chat.completions.create(
-        model="deepseek/deepseek-r1:free",
-        messages=[
-            {
-            "role": "user",
-            "content": "Preguntame algo"
-            }
-        ]
-    )
-
-    if chat:
-       answer = chat.choices[0].message.content.strip()
-    else:
-        answer = "Error: chat es None"    
-    return answer 
