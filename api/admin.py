@@ -1,6 +1,5 @@
 from django.contrib import admin
-from .models import Programmer, Question
+from .models import Chat
 
-# Register your models here.
-admin.site.register(Programmer)
-admin.site.register(Question)
+# Register models
+admin.site.register(Chat)

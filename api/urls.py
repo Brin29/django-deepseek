@@ -1,11 +1,9 @@
-from django.urls import path,include
-from rest_framework import routers
-from api import views
+from django.urls import path
+from . import views
 
-router=routers.DefaultRouter()
-router.register(r'programmers', views.ProgrammerViewSet)
-router.register(r'questions', views.QuestionViewSet)
+# router=routers.DefaultRouter()
 
 urlpatterns=[
-    path('', include(router.urls))
+    # path('', include(router.urls))
+    path('', views.chatbot, name='chatbot')
 ]
